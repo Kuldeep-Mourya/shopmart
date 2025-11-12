@@ -10,9 +10,16 @@ const userSchema=new mongoose.Schema({
     required:true,
     unique:true
   },
+  phone:{
+    type:Stirng,
+  },
+  image:{
+    type:Stirng,
+  },
   role:{
     type:String,
     required:true,
+    default:"Buyer",
     enum:["Seller","Buyer"]
   },
   cart:[
