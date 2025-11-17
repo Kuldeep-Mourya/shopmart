@@ -35,6 +35,11 @@ const productSchema=new mongoose.Schema({
     type:mongoose.Schema.Types.ObjectId,
     ref:'User'
   },
+  user:{
+    type:mongoose.Schema.Type.ObjectId,
+    ref:'User',
+    required:true
+  },
   stock:{
     type:Number,
     required:true
