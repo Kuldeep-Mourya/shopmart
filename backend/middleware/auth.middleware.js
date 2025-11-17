@@ -23,3 +23,15 @@ const authmiddleware=async(req, res, next)=>{
     return res.status(500).json({message:"Internal server error"})    
   }
 }
+
+
+const sellerAuthenticate=async(req, res,next)=>{
+  try {
+    if(req.user.role!=="Buyer"){
+      return res.status(401).json({message:"You are not a seller"})
+    }
+  } catch (error) {
+    console.log(error)
+    return res.status(401).json({message:"Invalid Token"})
+  }
+}
