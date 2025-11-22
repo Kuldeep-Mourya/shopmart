@@ -8,7 +8,13 @@ const CategorySchema=new mongoose.Schema({
   admin:{
     type:mongoose.Schema.Types.ObjectId,
     ref:'Admin'
-  }
+  },
+  category:[
+    {
+      type:mongoose.Schema.Type.ObjectId,
+      ref:'Category'
+    }
+  ]
 },{
   timestamps:true
 })

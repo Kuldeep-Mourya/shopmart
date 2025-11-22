@@ -13,7 +13,13 @@ const adminSchema=new mongoose.Schema({
   password:{
     type:String,
     required:true
-  }
+  },
+  category:[
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:'Category'
+    }
+  ]
 })
 
 export default mongoose.model("Admin",adminSchema)
